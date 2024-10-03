@@ -8,9 +8,8 @@
             "type": "dart",
             "program": "./lib/main.dart",
             "deviceId": "chrome",
-            "args": [
+            "args": [   
                 "--wasm",
-                "--web-renderder skwasm"
             ]
         },
         {
