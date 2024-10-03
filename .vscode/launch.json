@@ -1,0 +1,24 @@
+{
+    
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Zup Landing (Web)",
+            "request": "launch",
+            "type": "dart",
+            "program": "./lib/main.dart",
+            "deviceId": "chrome",
+            "args": [
+                "--wasm",
+                "--web-renderder skwasm"
+            ]
+        },
+        {
+            "name": "Zup Landing (Macos)",
+            "program": "./lib/main.dart",
+            "request": "launch",
+            "type": "dart",
+            "deviceId": "macos"
+        },
+    ]
+}
