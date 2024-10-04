@@ -49,7 +49,7 @@ class LandingPage extends StatelessWidget {
                       ),
                       const SizedBox(height: 10),
                       ZupIconButton(
-                        // backgroundColor: Colors.transparent,
+                        backgroundColor: Colors.transparent,
                         borderSide: const BorderSide(color: ZupColors.brand),
                         padding: const EdgeInsets.all(12),
                         iconColor: ZupColors.black,
@@ -71,6 +71,7 @@ class LandingPage extends StatelessWidget {
         ],
       ),
     );
+  }
 
   Widget background() => LayoutBuilder(builder: (context, constraints) {
         final screenWidth = constraints.maxWidth;
