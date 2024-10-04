@@ -71,7 +71,6 @@ class LandingPage extends StatelessWidget {
         ],
       ),
     );
-  }
 
   Widget background() => LayoutBuilder(builder: (context, constraints) {
         final screenWidth = constraints.maxWidth;
