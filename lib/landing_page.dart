@@ -40,7 +40,7 @@ class LandingPage extends StatelessWidget {
                         title: "Docs",
                         hoverElevation: 0,
                         border: const BorderSide(color: ZupColors.brand),
-                        backgroundColor: Colors.transparent,
+                        backgroundColor: ZupColors.white,
                         foregroundColor: ZupColors.brand,
                         onPressed: () {},
                         padding: EdgeInsets.zero,
@@ -50,13 +50,11 @@ class LandingPage extends StatelessWidget {
                       ),
                       const SizedBox(height: 10),
                       ZupIconButton(
-                        backgroundColor: Colors.transparent,
+                        backgroundColor: ZupColors.white,
                         borderSide: const BorderSide(color: ZupColors.brand),
                         padding: const EdgeInsets.all(12),
                         iconColor: ZupColors.black,
-                        icon: Assets.logos.x.svg(
-                          height: 22,
-                        ),
+                        icon: Assets.logos.x.svg(height: 22),
                         onPressed: () => launchUrl(
                           Uri.parse("https://x.com/zup_protocol"),
                         ),
@@ -93,7 +91,7 @@ class LandingPage extends StatelessWidget {
                   "Your very first\nliquidity pool\naggregator",
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    fontSize: (screenWidth * 0.05).clamp(30, 60),
+                    fontSize: (screenWidth * 0.05).clamp(30, 65),
                   ),
                 ),
               ),
@@ -108,15 +106,15 @@ class LandingPage extends StatelessWidget {
                   Rect.fromLTWH(0, 0, bounds.width, bounds.height),
                 ),
                 child: Assets.logos.zupTyped.svg(
-                  height: (screenWidth * 0.2).clamp(150, 400),
+                  height: (screenWidth * 0.2).clamp(80, 350),
                 ),
               ),
             ),
             Positioned(
-              left: -(screenWidth * 0.05),
-              bottom: -(screenWidth * 0.03),
+              left: 0,
+              bottom: 0,
               child: Assets.logos.zupTyped.svg(
-                height: (screenWidth * 0.3).clamp(150, 400),
+                height: (screenWidth * 0.2).clamp(80, 350),
                 colorFilter: const ColorFilter.mode(
                   ZupColors.gray5,
                   BlendMode.srcIn,
@@ -131,7 +129,7 @@ class LandingPage extends StatelessWidget {
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   color: ZupColors.gray5,
-                  fontSize: (screenWidth * 0.05).clamp(30, 60),
+                  fontSize: (screenWidth * 0.05).clamp(30, 65),
                 ),
               ),
             ),
