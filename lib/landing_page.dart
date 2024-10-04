@@ -43,6 +43,7 @@ class LandingPage extends StatelessWidget {
                         backgroundColor: Colors.transparent,
                         foregroundColor: ZupColors.brand,
                         onPressed: () {},
+                        padding: EdgeInsets.zero,
                         fixedIcon: true,
                         icon: Assets.icons.textPage.svg(),
                         width: 150,
@@ -57,9 +58,7 @@ class LandingPage extends StatelessWidget {
                           height: 22,
                         ),
                         onPressed: () => launchUrl(
-                          Uri.parse(
-                            "https://x.com/zup_protocol",
-                          ),
+                          Uri.parse("https://x.com/zup_protocol"),
                         ),
                       )
                     ],
@@ -94,7 +93,7 @@ class LandingPage extends StatelessWidget {
                   "Your very first\nliquidity pool\naggregator",
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    fontSize: (screenWidth * 0.05).clamp(0, 60),
+                    fontSize: (screenWidth * 0.05).clamp(30, 60),
                   ),
                 ),
               ),
@@ -109,15 +108,15 @@ class LandingPage extends StatelessWidget {
                   Rect.fromLTWH(0, 0, bounds.width, bounds.height),
                 ),
                 child: Assets.logos.zupTyped.svg(
-                  height: (screenWidth * 0.2).clamp(0, 400),
+                  height: (screenWidth * 0.2).clamp(150, 400),
                 ),
               ),
             ),
             Positioned(
-              left: -(screenWidth * 0.1),
-              bottom: -(screenWidth * 0.02),
+              left: -(screenWidth * 0.05),
+              bottom: -(screenWidth * 0.03),
               child: Assets.logos.zupTyped.svg(
-                height: (screenWidth * 0.3).clamp(0, 400),
+                height: (screenWidth * 0.3).clamp(150, 400),
                 colorFilter: const ColorFilter.mode(
                   ZupColors.gray5,
                   BlendMode.srcIn,
@@ -132,7 +131,7 @@ class LandingPage extends StatelessWidget {
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   color: ZupColors.gray5,
-                  fontSize: (screenWidth * 0.05).clamp(0, 60),
+                  fontSize: (screenWidth * 0.05).clamp(30, 60),
                 ),
               ),
             ),
