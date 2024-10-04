@@ -12,102 +12,28 @@ class LandingPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(builder: (context, constraints) {
-      return Scaffold(
-        body: Stack(
-          fit: StackFit.expand,
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(40),
-              child: Column(
-                mainAxisSize: MainAxisSize.max,
-                children: [
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      ConstrainedBox(
-                        constraints: const BoxConstraints(maxWidth: 580),
-                        child: ShaderMask(
-                          shaderCallback: (bounds) => const LinearGradient(
-                            begin: Alignment.topCenter,
-                            end: Alignment.bottomCenter,
-                            colors: [ZupColors.brand5, ZupColors.brand],
-                          ).createShader(
-                            Rect.fromLTWH(0, 0, bounds.width, bounds.height),
-                          ),
-                          blendMode: BlendMode.srcIn,
-                          child: const Text(
-                            "Your very first liquidity pool aggregator",
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 60,
-                            ),
-                          ),
-                        ),
-                      ),
-                      const Spacer(),
-                      SizedOverflowBox(
-                        size: const Size(270, 250),
-                        child: ShaderMask(
-                          shaderCallback: (bounds) => const LinearGradient(
-                            colors: [
-                              ZupColors.brand,
-                              ZupColors.brand,
-                              ZupColors.black
-                            ],
-                          ).createShader(
-                            Rect.fromLTWH(0, 0, bounds.width, bounds.height),
-                          ),
-                          child: Assets.logos.zupTyped.svg(height: 400),
-                        ),
-                      )
-                    ],
-                  ),
-                  const Spacer(),
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      Transform.translate(
-                        offset: const Offset(0, 120),
-                        child: Assets.logos.zupTyped.svg(
-                          height: 400,
-                          colorFilter: const ColorFilter.mode(
-                            ZupColors.gray5,
-                            BlendMode.srcIn,
-                          ),
-                        ),
-                      ),
-                      const Spacer(),
-                      const SizedBox(
-                        width: 300,
-                        child: Text(
-                          "Smart Liquidity Choices",
-                          style: TextStyle(
-                            color: ZupColors.gray5,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 70,
-                          ),
-                        ),
-                      )
-                    ],
-                  )
-                ],
-              ),
-            ),
-            Center(
-              child: SingleChildScrollView(
-                child: Padding(
-                  padding: const EdgeInsets.only(top: 100),
+    return Scaffold(
+      body: Stack(
+        children: [
+          background(),
+          CustomScrollView(
+            slivers: [
+              SliverFillRemaining(
+                hasScrollBody: false,
+                fillOverscroll: false,
+                child: Center(
                   child: Column(
+                    mainAxisSize: MainAxisSize.min,
                     children: [
                       Assets.logos.zup.svg(height: 250),
-                      const SizedBox(height: 40),
+                      const SizedBox(height: 50),
                       ZupPrimaryButton(
                         title: "Waitlist",
                         onPressed: () {},
                         fixedIcon: true,
-                        icon: Assets.icons.listClipboard.svg(),
                         width: 150,
+                        padding: EdgeInsets.zero,
+                        icon: Assets.icons.listClipboard.svg(),
                       ),
                       const SizedBox(height: 10),
                       ZupPrimaryButton(
@@ -121,7 +47,7 @@ class LandingPage extends StatelessWidget {
                         icon: Assets.icons.textPage.svg(),
                         width: 150,
                       ),
-                      const SizedBox(height: 20),
+                      const SizedBox(height: 10),
                       ZupIconButton(
                         // backgroundColor: Colors.transparent,
                         borderSide: const BorderSide(color: ZupColors.brand),
@@ -140,10 +66,76 @@ class LandingPage extends StatelessWidget {
                   ),
                 ),
               ),
+            ],
+          ),
+        ],
+      ),
+    );
+
+  Widget background() => LayoutBuilder(builder: (context, constraints) {
+        final screenWidth = constraints.maxWidth;
+
+        return Stack(
+          children: [
+            Positioned(
+              left: screenWidth * 0.02,
+              top: screenWidth * 0.02,
+              child: ShaderMask(
+                shaderCallback: (bounds) => const LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [ZupColors.brand5, ZupColors.brand],
+                ).createShader(
+                  Rect.fromLTWH(0, 0, bounds.width, bounds.height),
+                ),
+                blendMode: BlendMode.srcIn,
+                child: Text(
+                  "Your very first\nliquidity pool\naggregator",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: (screenWidth * 0.05).clamp(0, 60),
+                  ),
+                ),
+              ),
+            ),
+            Positioned(
+              right: -(screenWidth * 0.1),
+              top: -(screenWidth * 0.02),
+              child: ShaderMask(
+                shaderCallback: (bounds) => const LinearGradient(
+                  colors: [ZupColors.brand, ZupColors.brand, ZupColors.black],
+                ).createShader(
+                  Rect.fromLTWH(0, 0, bounds.width, bounds.height),
+                ),
+                child: Assets.logos.zupTyped.svg(
+                  height: (screenWidth * 0.2).clamp(0, 400),
+                ),
+              ),
+            ),
+            Positioned(
+              left: -(screenWidth * 0.1),
+              bottom: -(screenWidth * 0.02),
+              child: Assets.logos.zupTyped.svg(
+                height: (screenWidth * 0.3).clamp(0, 400),
+                colorFilter: const ColorFilter.mode(
+                  ZupColors.gray5,
+                  BlendMode.srcIn,
+                ),
+              ),
+            ),
+            Positioned(
+              right: screenWidth * 0.02,
+              bottom: screenWidth * 0.02,
+              child: Text(
+                "Smart\nLiquidity\nChoices",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  color: ZupColors.gray5,
+                  fontSize: (screenWidth * 0.05).clamp(0, 60),
+                ),
+              ),
             ),
           ],
-        ),
-      );
-    });
-  }
+        );
+      });
 }
