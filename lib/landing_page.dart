@@ -29,7 +29,9 @@ class LandingPage extends StatelessWidget {
                       const SizedBox(height: 50),
                       ZupPrimaryButton(
                         title: "Waitlist",
-                        onPressed: () {},
+                        onPressed: () => launchUrl(
+                          Uri.parse("https://waitlist.zupprotocol.xyz"),
+                        ),
                         fixedIcon: true,
                         width: 150,
                         padding: EdgeInsets.zero,
@@ -42,7 +44,10 @@ class LandingPage extends StatelessWidget {
                         border: const BorderSide(color: ZupColors.brand),
                         backgroundColor: ZupColors.white,
                         foregroundColor: ZupColors.brand,
-                        onPressed: () {},
+                        onPressed: () => launchUrl(
+                          Uri.parse(
+                              "https://zupprotocol.notion.site/Zup-Documentation-1155a07f86f68059a5e2f2c1cfdf9be2?pvs=4"),
+                        ),
                         padding: EdgeInsets.zero,
                         fixedIcon: true,
                         icon: Assets.icons.textPage.svg(),
