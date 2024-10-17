@@ -4,11 +4,19 @@ import 'package:zup_landing/gen/assets.gen.dart';
 import 'package:zup_ui_kit/buttons/buttons.dart';
 import 'package:zup_ui_kit/zup_colors.dart';
 
-class LandingPage extends StatelessWidget {
+class LandingPage extends StatefulWidget {
   const LandingPage({super.key});
 
+  @override
+  State<LandingPage> createState() => _LandingPageState();
+}
+
+class _LandingPageState extends State<LandingPage> {
   final double horizontalScreenPadding = 20;
+
   bool isMobile(BoxConstraints constraints) => constraints.maxWidth < 600;
+  bool isHoveringX = false;
+  bool isHoveringTelegram = false;
 
   @override
   Widget build(BuildContext context) {
@@ -53,16 +61,56 @@ class LandingPage extends StatelessWidget {
                         icon: Assets.icons.textPage.svg(),
                         width: 150,
                       ),
-                      const SizedBox(height: 10),
-                      ZupIconButton(
-                        backgroundColor: ZupColors.white,
-                        borderSide: const BorderSide(color: ZupColors.brand),
-                        padding: const EdgeInsets.all(12),
-                        iconColor: ZupColors.black,
-                        icon: Assets.logos.x.svg(height: 22),
-                        onPressed: () => launchUrl(
-                          Uri.parse("https://x.com/zup_protocol"),
-                        ),
+                      const SizedBox(height: 24),
+                      Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          MouseRegion(
+                            cursor: SystemMouseCursors.click,
+                            onEnter: (event) => setState(
+                              () => isHoveringX = true,
+                            ),
+                            onExit: (event) => setState(
+                              () => isHoveringX = false,
+                            ),
+                            child: GestureDetector(
+                              child: Assets.logos.x.svg(
+                                height: 34,
+                                colorFilter: ColorFilter.mode(
+                                  ZupColors.gray4,
+                                  isHoveringX ? BlendMode.dst : BlendMode.srcIn,
+                                ),
+                              ),
+                              onTap: () => launchUrl(
+                                Uri.parse("https://x.com/zup_protocol"),
+                              ),
+                            ),
+                          ),
+                          const SizedBox(width: 24),
+                          MouseRegion(
+                            cursor: SystemMouseCursors.click,
+                            onEnter: (event) => setState(
+                              () => isHoveringTelegram = true,
+                            ),
+                            onExit: (event) => setState(
+                              () => isHoveringTelegram = false,
+                            ),
+                            child: GestureDetector(
+                              child: Assets.logos.telegram.svg(
+                                height: 34,
+                                colorFilter: ColorFilter.mode(
+                                  ZupColors.gray4,
+                                  isHoveringTelegram
+                                      ? BlendMode.dst
+                                      : BlendMode.srcIn,
+                                ),
+                              ),
+                              onTap: () => launchUrl(
+                                Uri.parse("https://t.me/zupprotocol"),
+                              ),
+                            ),
+                          ),
+                        ],
                       )
                     ],
                   ),
