@@ -28,6 +28,9 @@ class $AssetsIconsGen {
 class $AssetsLogosGen {
   const $AssetsLogosGen();
 
+  /// File path: assets/logos/telegram.svg
+  SvgGenImage get telegram => const SvgGenImage('assets/logos/telegram.svg');
+
   /// File path: assets/logos/x.svg
   SvgGenImage get x => const SvgGenImage('assets/logos/x.svg');
 
@@ -38,7 +41,7 @@ class $AssetsLogosGen {
   SvgGenImage get zupTyped => const SvgGenImage('assets/logos/zup.typed.svg');
 
   /// List of all assets
-  List<SvgGenImage> get values => [x, zup, zupTyped];
+  List<SvgGenImage> get values => [telegram, x, zup, zupTyped];
 }
 
 class Assets {
