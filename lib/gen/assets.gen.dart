@@ -15,6 +15,9 @@ import 'package:vector_graphics/vector_graphics.dart' as _vg;
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
+  /// File path: assets/icons/bolt.svg
+  SvgGenImage get bolt => const SvgGenImage('assets/icons/bolt.svg');
+
   /// File path: assets/icons/list.clipboard.svg
   SvgGenImage get listClipboard => const SvgGenImage('assets/icons/list.clipboard.svg');
 
@@ -22,7 +25,7 @@ class $AssetsIconsGen {
   SvgGenImage get textPage => const SvgGenImage('assets/icons/text.page.svg');
 
   /// List of all assets
-  List<SvgGenImage> get values => [listClipboard, textPage];
+  List<SvgGenImage> get values => [bolt, listClipboard, textPage];
 }
 
 class $AssetsLogosGen {

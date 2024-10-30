@@ -24,62 +24,101 @@ class _AppPageState extends State<AppPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
+        alignment: Alignment.centerLeft,
         children: [
-          background(),
+          Align(
+            alignment: Alignment.centerLeft,
+            child: Assets.icons.bolt.svg(
+              colorFilter: const ColorFilter.mode(
+                ZupColors.gray6,
+                BlendMode.srcIn,
+              ),
+              height: MediaQuery.sizeOf(context).height,
+            ),
+          ),
           CustomScrollView(
             slivers: [
-              SliverFillRemaining(
-                hasScrollBody: false,
-                fillOverscroll: false,
-                child: Center(
+              SliverPadding(
+                padding: const EdgeInsets.all(20),
+                sliver: SliverFillRemaining(
+                  hasScrollBody: false,
                   child: Column(
-                    mainAxisSize: MainAxisSize.min,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Assets.logos.zup.svg(height: 250),
-                      const SizedBox(height: 50),
-                      ZupPrimaryButton(
-                        title: "Mint Genesis NFT",
-                        border: const BorderSide(color: ZupColors.brand),
-                        backgroundColor: ZupColors.brand,
-                        foregroundColor: ZupColors.white,
-                        onPressed: () => Routefly.navigate(routePaths.mint),
-                        padding: EdgeInsets.zero,
-                        fixedIcon: true,
-                        icon: Assets.logos.zup.svg(height: 20),
-                        width: 200,
-                      ),
-                      const SizedBox(height: 10),
-                      ZupPrimaryButton(
-                        title: "Waitlist",
-                        onPressed: () => launchUrl(
-                          Uri.parse("https://waitlist.zupprotocol.xyz"),
+                      Center(child: Assets.logos.zup.svg(height: 120)),
+                      const SizedBox(height: 20),
+                      Align(
+                        alignment: Alignment.center,
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 65)
+                              .copyWith(top: 0),
+                          child: const Text(
+                            textAlign: TextAlign.center,
+                            "Your very first liquidity pool agreggator",
+                            style: TextStyle(
+                              fontSize: 18,
+                              color: ZupColors.brand,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
                         ),
-                        fixedIcon: true,
-                        hoverElevation: 0,
-                        border: const BorderSide(color: ZupColors.brand),
-                        width: 200,
-                        backgroundColor: Colors.transparent,
-                        foregroundColor: ZupColors.brand,
-                        padding: EdgeInsets.zero,
-                        icon: Assets.icons.listClipboard.svg(),
                       ),
-                      const SizedBox(height: 10),
-                      ZupPrimaryButton(
-                        title: "Docs",
-                        hoverElevation: 0,
-                        border: const BorderSide(color: ZupColors.brand),
-                        backgroundColor: ZupColors.white,
-                        foregroundColor: ZupColors.brand,
-                        onPressed: () => launchUrl(
-                          Uri.parse(
-                              "https://zupprotocol.notion.site/Zup-Documentation-1155a07f86f68059a5e2f2c1cfdf9be2?pvs=4"),
-                        ),
-                        padding: EdgeInsets.zero,
-                        fixedIcon: true,
-                        icon: Assets.icons.textPage.svg(),
-                        width: 200,
+                      // const SizedBox(height: 24),
+                      const Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [],
                       ),
-                      const SizedBox(height: 24),
+                      const SizedBox(height: 40),
+                      Wrap(
+                        // mainAxisSize: MainAxisSize.min,
+                        runSpacing: 20,
+                        spacing: 20,
+                        alignment: WrapAlignment.center,
+                        crossAxisAlignment: WrapCrossAlignment.center,
+                        children: [
+                          ZupPrimaryButton(
+                            title: "Mint your OG NFT",
+                            border: const BorderSide(color: ZupColors.brand),
+                            backgroundColor: ZupColors.brand,
+                            foregroundColor: ZupColors.white,
+                            onPressed: () => Routefly.navigate(routePaths.mint),
+                            padding: EdgeInsets.zero,
+                            fixedIcon: true,
+                            icon: Assets.icons.bolt.svg(height: 18),
+                            width: 200,
+                          ),
+                          ZupPrimaryButton(
+                            title: "Waitlist",
+                            onPressed: () => launchUrl(
+                              Uri.parse("https://waitlist.zupprotocol.xyz"),
+                            ),
+                            backgroundColor: Colors.transparent,
+                            foregroundColor: ZupColors.brand,
+                            border: const BorderSide(color: ZupColors.brand),
+                            hoverElevation: 0,
+                            fixedIcon: true,
+                            width: 200,
+                            padding: EdgeInsets.zero,
+                            icon: Assets.icons.listClipboard.svg(),
+                          ),
+                          ZupPrimaryButton(
+                            title: "Docs",
+                            hoverElevation: 0,
+                            border: const BorderSide(color: ZupColors.brand),
+                            backgroundColor: Colors.transparent,
+                            foregroundColor: ZupColors.brand,
+                            onPressed: () => launchUrl(
+                              Uri.parse(
+                                  "https://zupprotocol.notion.site/Zup-Documentation-1155a07f86f68059a5e2f2c1cfdf9be2?pvs=4"),
+                            ),
+                            padding: EdgeInsets.zero,
+                            fixedIcon: true,
+                            icon: Assets.icons.textPage.svg(),
+                            width: 200,
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: 30),
                       Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
@@ -133,69 +172,11 @@ class _AppPageState extends State<AppPage> {
                     ],
                   ),
                 ),
-              ),
+              )
             ],
           ),
         ],
       ),
     );
   }
-
-  Widget background() => LayoutBuilder(builder: (context, constraints) {
-        final screenWidth = constraints.maxWidth;
-
-        return Stack(
-          children: [
-            Positioned(
-              left: screenWidth * 0.02,
-              top: screenWidth * 0.02,
-              child: Text(
-                "Your very first\nliquidity pool\naggregator",
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: ZupColors.brand,
-                  fontSize: (screenWidth * 0.05).clamp(30, 65),
-                ),
-              ),
-            ),
-            Positioned(
-              right: -(screenWidth * 0.1),
-              top: -(screenWidth * 0.02),
-              child: ShaderMask(
-                shaderCallback: (bounds) => const LinearGradient(
-                  colors: [ZupColors.brand, ZupColors.brand, ZupColors.black],
-                ).createShader(
-                  Rect.fromLTWH(0, 0, bounds.width, bounds.height),
-                ),
-                child: Assets.logos.zupTyped.svg(
-                  height: (screenWidth * 0.2).clamp(80, 350),
-                ),
-              ),
-            ),
-            Positioned(
-              left: 0,
-              bottom: 0,
-              child: Assets.logos.zupTyped.svg(
-                height: (screenWidth * 0.2).clamp(80, 350),
-                colorFilter: const ColorFilter.mode(
-                  ZupColors.gray5,
-                  BlendMode.srcIn,
-                ),
-              ),
-            ),
-            Positioned(
-              right: screenWidth * 0.02,
-              bottom: screenWidth * 0.02,
-              child: Text(
-                "Smart\nLiquidity\nChoices",
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: ZupColors.gray5,
-                  fontSize: (screenWidth * 0.05).clamp(30, 65),
-                ),
-              ),
-            ),
-          ],
-        );
-      });
 }
