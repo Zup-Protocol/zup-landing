@@ -36,6 +36,16 @@ class _AppPageState extends State<AppPage> {
               height: MediaQuery.sizeOf(context).height,
             ),
           ),
+          Align(
+            alignment: Alignment.centerLeft,
+            child: Assets.icons.bolt.svg(
+              colorFilter: const ColorFilter.mode(
+                ZupColors.gray6,
+                BlendMode.srcIn,
+              ),
+              height: MediaQuery.sizeOf(context).height,
+            ),
+          ),
           CustomScrollView(
             slivers: [
               SliverPadding(
@@ -168,9 +178,18 @@ class _AppPageState extends State<AppPage> {
                             ),
                           ),
                         ],
-                      )
+                      ),
                     ],
                   ),
+                ),
+              ),
+              SliverToBoxAdapter(
+                child: Column(
+                  children: [
+                    const SizedBox(height: 50),
+                    Assets.images.demo.image(height: 400),
+                    const SizedBox(height: 200),
+                  ],
                 ),
               )
             ],
