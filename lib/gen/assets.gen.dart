@@ -18,8 +18,12 @@ class $AssetsIconsGen {
   /// File path: assets/icons/bolt.svg
   SvgGenImage get bolt => const SvgGenImage('assets/icons/bolt.svg');
 
+  /// File path: assets/icons/bolt.svg
+  SvgGenImage get bolt => const SvgGenImage('assets/icons/bolt.svg');
+
   /// File path: assets/icons/list.clipboard.svg
-  SvgGenImage get listClipboard => const SvgGenImage('assets/icons/list.clipboard.svg');
+  SvgGenImage get listClipboard =>
+      const SvgGenImage('assets/icons/list.clipboard.svg');
 
   /// File path: assets/icons/text.page.svg
   SvgGenImage get textPage => const SvgGenImage('assets/icons/text.page.svg');
@@ -211,7 +215,8 @@ class SvgGenImage {
       placeholderBuilder: placeholderBuilder,
       semanticsLabel: semanticsLabel,
       excludeFromSemantics: excludeFromSemantics,
-      colorFilter: colorFilter ?? (color == null ? null : ColorFilter.mode(color, colorBlendMode)),
+      colorFilter: colorFilter ??
+          (color == null ? null : ColorFilter.mode(color, colorBlendMode)),
       clipBehavior: clipBehavior,
       cacheColorFilter: cacheColorFilter,
     );
