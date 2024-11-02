@@ -18,9 +18,6 @@ class $AssetsIconsGen {
   /// File path: assets/icons/bolt.svg
   SvgGenImage get bolt => const SvgGenImage('assets/icons/bolt.svg');
 
-  /// File path: assets/icons/bolt.svg
-  SvgGenImage get bolt => const SvgGenImage('assets/icons/bolt.svg');
-
   /// File path: assets/icons/list.clipboard.svg
   SvgGenImage get listClipboard =>
       const SvgGenImage('assets/icons/list.clipboard.svg');
