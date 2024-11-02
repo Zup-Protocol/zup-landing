@@ -168,9 +168,18 @@ class _AppPageState extends State<AppPage> {
                             ),
                           ),
                         ],
-                      )
+                      ),
                     ],
                   ),
+                ),
+              ),
+              SliverToBoxAdapter(
+                child: Column(
+                  children: [
+                    const SizedBox(height: 50),
+                    Assets.images.demo.image(height: 400),
+                    const SizedBox(height: 200),
+                  ],
                 ),
               )
             ],

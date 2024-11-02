@@ -41,6 +41,7 @@ flutter:
   assets:
     - assets/logos/
     - assets/icons/
+    - assets/images/
 
   fonts:
     - family: "SF Pro Rounded"
