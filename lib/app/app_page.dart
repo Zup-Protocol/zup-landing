@@ -25,7 +25,6 @@ class _AppPageState extends State<AppPage> {
     return Scaffold(
       body: Stack(
         alignment: Alignment.centerLeft,
-        alignment: Alignment.centerLeft,
         children: [
           Align(
             alignment: Alignment.centerLeft,
