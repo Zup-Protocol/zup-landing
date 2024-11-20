@@ -100,7 +100,7 @@ class _AppPageState extends State<AppPage> {
                           ZupPrimaryButton(
                             title: "Waitlist",
                             onPressed: () => launchUrl(
-                              Uri.parse("https://waitlist.zupprotocol.xyz"),
+                              Uri.parse("https://tally.so/r/3yElN0"),
                             ),
                             backgroundColor: Colors.transparent,
                             foregroundColor: ZupColors.brand,
