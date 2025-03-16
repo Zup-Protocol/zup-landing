@@ -15,6 +15,7 @@ dependencies:
   webview_flutter: ^4.10.0
   webview_flutter_web: ^0.2.3+2
   zup_ui_kit:
+    # path: ../zup_ui_kit
     git:
       url: "https://github.com/Zup-Protocol/zup-ui-kit.git"
       ref: main
