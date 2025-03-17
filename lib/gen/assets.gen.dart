@@ -15,32 +15,55 @@ import 'package:vector_graphics/vector_graphics.dart' as _vg;
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
+  /// File path: assets/icons/arrow.right.svg
+  SvgGenImage get arrowRight => const SvgGenImage('assets/icons/arrow.right.svg');
+
   /// File path: assets/icons/bolt.svg
   SvgGenImage get bolt => const SvgGenImage('assets/icons/bolt.svg');
 
+  /// File path: assets/icons/brasil.argentina.colors.svg
+  SvgGenImage get brasilArgentinaColors => const SvgGenImage('assets/icons/brasil.argentina.colors.svg');
+
+  /// File path: assets/icons/line.3.horizontal.svg
+  SvgGenImage get line3Horizontal => const SvgGenImage('assets/icons/line.3.horizontal.svg');
+
   /// File path: assets/icons/list.clipboard.svg
-  SvgGenImage get listClipboard =>
-      const SvgGenImage('assets/icons/list.clipboard.svg');
+  SvgGenImage get listClipboard => const SvgGenImage('assets/icons/list.clipboard.svg');
+
+  /// File path: assets/icons/phone.svg
+  SvgGenImage get phone => const SvgGenImage('assets/icons/phone.svg');
+
+  /// File path: assets/icons/questionmark.circle.svg
+  SvgGenImage get questionmarkCircle => const SvgGenImage('assets/icons/questionmark.circle.svg');
 
   /// File path: assets/icons/text.page.svg
   SvgGenImage get textPage => const SvgGenImage('assets/icons/text.page.svg');
 
   /// List of all assets
-  List<SvgGenImage> get values => [bolt, listClipboard, textPage];
+  List<SvgGenImage> get values => [arrowRight, bolt, brasilArgentinaColors, line3Horizontal, listClipboard, phone, questionmarkCircle, textPage];
 }
 
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  /// File path: assets/images/cryptos.exchanges.png
+  AssetGenImage get cryptosExchanges => const AssetGenImage('assets/images/cryptos.exchanges.png');
+
   /// File path: assets/images/demo.gif
   AssetGenImage get demo => const AssetGenImage('assets/images/demo.gif');
 
+  /// File path: assets/images/liquidity.pool.png
+  AssetGenImage get liquidityPool => const AssetGenImage('assets/images/liquidity.pool.png');
+
   /// List of all assets
-  List<AssetGenImage> get values => [demo];
+  List<AssetGenImage> get values => [cryptosExchanges, demo, liquidityPool];
 }
 
 class $AssetsLogosGen {
   const $AssetsLogosGen();
+
+  /// File path: assets/logos/github.svg
+  SvgGenImage get github => const SvgGenImage('assets/logos/github.svg');
 
   /// File path: assets/logos/telegram.svg
   SvgGenImage get telegram => const SvgGenImage('assets/logos/telegram.svg');
@@ -55,7 +78,7 @@ class $AssetsLogosGen {
   SvgGenImage get zupTyped => const SvgGenImage('assets/logos/zup.typed.svg');
 
   /// List of all assets
-  List<SvgGenImage> get values => [telegram, x, zup, zupTyped];
+  List<SvgGenImage> get values => [github, telegram, x, zup, zupTyped];
 }
 
 class Assets {
@@ -212,8 +235,7 @@ class SvgGenImage {
       placeholderBuilder: placeholderBuilder,
       semanticsLabel: semanticsLabel,
       excludeFromSemantics: excludeFromSemantics,
-      colorFilter: colorFilter ??
-          (color == null ? null : ColorFilter.mode(color, colorBlendMode)),
+      colorFilter: colorFilter ?? (color == null ? null : ColorFilter.mode(color, colorBlendMode)),
       clipBehavior: clipBehavior,
       cacheColorFilter: cacheColorFilter,
     );
