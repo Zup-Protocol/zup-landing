@@ -117,7 +117,7 @@ class AppHeader extends StatelessWidget {
                         ),
                       ),
                     ] else ...[
-                      const ZupPrimaryButton(
+                      ZupPrimaryButton(
                         height: 45,
                         // border:
                         //     const BorderSide(width: 1, color: ZupColors.brand),
@@ -125,12 +125,11 @@ class AppHeader extends StatelessWidget {
                         foregroundColor: ZupColors.brand,
                         title: "Launch App (Soon)",
                         fixedIcon: true,
-                        onPressed: null,
-                        //  () {
-                        //   launchUrl(
-                        //     Uri.parse("https://app.zupprotocol.xyz"),
-                        //   );
-                        // },
+                        onPressed: () {
+                          launchUrl(
+                            Uri.parse("https://app.zupprotocol.xyz"),
+                          );
+                        },
                         hoverElevation: 0,
                         isTrailingIcon: true,
                       ),
