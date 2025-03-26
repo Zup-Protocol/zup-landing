@@ -119,12 +119,13 @@ class AppHeader extends StatelessWidget {
                     ] else ...[
                       ZupPrimaryButton(
                         height: 45,
-                        // border:
-                        //     const BorderSide(width: 1, color: ZupColors.brand),
+                        border:
+                            const BorderSide(width: 1, color: ZupColors.brand),
                         backgroundColor: Colors.transparent,
                         foregroundColor: ZupColors.brand,
-                        title: "Launch App (Soon)",
+                        title: "Launch App",
                         fixedIcon: true,
+                        icon: Assets.icons.arrowRight.svg(height: 12),
                         onPressed: () {
                           launchUrl(
                             Uri.parse("https://app.zupprotocol.xyz"),
