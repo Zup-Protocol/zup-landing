@@ -85,8 +85,13 @@ class AppPage extends StatelessWidget {
                                   ),
                                   const SizedBox(height: 20),
                                   ZupPrimaryButton(
-                                    title: "Get Started (Soon)",
-                                    onPressed: null,
+                                    title: "Get Started ",
+                                    onPressed: () {
+                                      launchUrl(
+                                        Uri.parse(
+                                            "https://app.zupprotocol.xyz"),
+                                      );
+                                    },
                                     isTrailingIcon: true,
                                     height: 40,
                                     fixedIcon: true,

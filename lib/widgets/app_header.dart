@@ -100,18 +100,17 @@ class AppHeader extends StatelessWidget {
                           child: ZupPrimaryButton(
                             icon: Assets.icons.arrowRight.svg(height: 12),
                             height: 45,
-                            // border:
-                            //     const BorderSide(width: 1, color: ZupColors.brand),
+                            border: const BorderSide(
+                                width: 1, color: ZupColors.brand),
                             backgroundColor: Colors.transparent,
                             foregroundColor: ZupColors.brand,
-                            title: "Launch App (Soon)",
+                            title: "Launch App",
                             // fixedIcon: true,
-                            onPressed: null,
-                            //  () {
-                            //   launchUrl(
-                            //     Uri.parse("https://app.zupprotocol.xyz"),
-                            //   );
-                            // },
+                            onPressed: () {
+                              launchUrl(
+                                Uri.parse("https://app.zupprotocol.xyz"),
+                              );
+                            },
                             hoverElevation: 0,
                             isTrailingIcon: true,
                           ),
