@@ -4,17 +4,17 @@ import btnIcon from "public/assets/icons/btnIcon.svg";
 
 const buttonStyles = [
   "bg-[var(--purple-dark)] text-white rounded-xl hover:bg-[var(--purple)]",
-  "text-[var(--black)] rounded-xl hover:bg-[var(--purple)]",
+  "text-[var(--black)] rounded-xl hover:bg-[var(--purple)] hover:text-white ",
   "bg-[var(--purple-dark)] text-white rounded-xl hover:bg-[var(--purple)]",
 ];
 
 export default function Button({ url, text, variant }) {
   const style = buttonStyles[variant] || buttonStyles[0];
   return (
-    <button className={`${style} cursor-pointer px-4 py-2 transition-colors duration-200`}>
+    <button className={`${style} cursor-pointer px-4 py-2 transition-colors duration-200 group`}>
       <Link href={url} className="flex flex-row items-center justify-center  gap-2">
         {text}
-        <Image src={btnIcon} alt="" />
+        <Image src={btnIcon} alt="" className={`group-hover:invert-0 ${variant == 1 ? 'invert' : ''}  `} />
       </Link>
     </button>
   );

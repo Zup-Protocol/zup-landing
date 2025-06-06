@@ -49,7 +49,7 @@ export default function RootLayout({
       )}
     >
       <body className="antialiased bg-no-repeat">
-        <main className="w-full lex-auto min-w-0 flex flex-col px-2 md:px-0">
+        <main className="w-full lex-auto min-w-0 flex flex-col md:px-0">
           <Navbar />
           {children}
           <Analytics />
