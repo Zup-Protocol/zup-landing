@@ -38,7 +38,7 @@ export default function Navbar() {
           ))}
         </div>
         <div className='md:w-[33%] flex items-center justify-end'>
-          <Button variant={0} text="Launch App" url="" />
+          <Button variant={'primary'} text="Launch App" url="" />
         </div>
       </div>
     </nav>
