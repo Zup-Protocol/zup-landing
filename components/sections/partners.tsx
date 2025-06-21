@@ -54,7 +54,7 @@ const itemVariants = {
 
 export default function PartnersSection() {
   return (
-    <section className="flex md:my-40 w-full items-center justify-center p-4">
+    <section className="flex py-10 md:my-40 w-full items-center justify-center p-4">
       <motion.div
         className="w-full max-w-7xl rounded-2xl bg-white p-8 border border-gray-300 md:p-12"
         variants={sectionVariants}

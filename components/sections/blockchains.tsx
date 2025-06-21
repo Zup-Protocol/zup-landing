@@ -79,7 +79,7 @@ export default function BlockchainsSection() {
     >
       <div className="w-full max-w-7xl flex flex-col items-center justify-center z-20">
         <motion.div
-          className="h-36 w-full border-b border-b-gray-200 flex flex-col items-center justify-center space-y-2 text-center px-4"
+          className="h-48 w-full border-b border-b-gray-200 flex flex-col items-center justify-center space-y-2 text-center px-4"
           variants={itemVariants}
         >
           <div className="flex flex-col md:flex-col items-center justify-center gap-2">
@@ -130,7 +130,7 @@ export default function BlockchainsSection() {
       </div>
 
       <div className="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center">
-        <div className="h-36 w-full border-b border-b-gray-200"></div>
+        <div className="h-48 w-full border-b border-b-gray-200"></div>
         <div className="h-36 w-full border-b border-b-gray-200"></div>
         <div className="h-36 w-full border-b border-b-gray-200"></div>
       </div>

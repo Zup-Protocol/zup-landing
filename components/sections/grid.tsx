@@ -66,7 +66,7 @@ const bar = {
 
 export default function GridSection() {
   return (
-    <section className="w-full pb-20 relative px-4 lg:px-0 overflow-x-hidden">
+    <section className="w-full md:pb-20 relative px-4 lg:px-0 overflow-x-hidden">
 
       <motion.div
         variants={bar}
