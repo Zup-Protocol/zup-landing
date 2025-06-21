@@ -27,11 +27,11 @@ export default function FeatureCard({
 
   const cardClasses = clsx(
     'bg-white flex flex-col items-start justify-between text-left lg:rounded-lg',
-    'max-w-[360px] sm:w-2/3 md:max-w-full md:w-1/2 p-4 gap-4',
+    'w-full sm:w-2/3 md:max-w-full md:w-1/2 p-4 gap-4',
     {
       'rounded-r-lg': alignment === 'left',
       'rounded-l-lg': alignment === 'right',
-      'rounded-lg mx-auto py-10 w-full': alignment === 'center',
+      'rounded-lg mx-auto py-10': alignment === 'center',
     }
   );
 

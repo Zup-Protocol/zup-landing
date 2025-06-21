@@ -37,7 +37,7 @@ export const GridCard = ({ icon, title, description, linkText, linkHref, classNa
         {icon}
         <h3 className="text-xl font-bold">{title}</h3>
       </div>
-      <p className="text-text-secondary mt-2 flex-grow">{description}</p>
+      <p className="mt-2 flex-grow text-gray-400">{description}</p>
       <div className='flex justify-end'>
         {linkText && linkHref && (
           <a href={linkHref} className="text-[var(--purple)] font-semibold mt-6 flex items-center group">
