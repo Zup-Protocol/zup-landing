@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import icon from '../../public/assets/icons/drop.svg';
+
 
 export default function CenteredCard() {
   return (

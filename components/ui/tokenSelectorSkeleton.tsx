@@ -6,6 +6,7 @@ export default function TokenSelectorSkeleton({ type = 'default' }) {
   const types = {
     default: "justify-start",
     secondary: "flex-row-reverse justify-between",
+    center: "flex-row-reverse justify-between",
   };
 
   return (
@@ -15,7 +16,6 @@ export default function TokenSelectorSkeleton({ type = 'default' }) {
         src={crypto}
         width={24}
         height={24}
-        className="opacity-50"
       />
       <div className="h-5 w-32 bg-gray-200 rounded-md animate-pulse"></div>
     </div>

@@ -7,6 +7,7 @@ import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import Navbar from '../components/ui/navbar';
 import AuroraBackground from 'components/ui/background';
+import Footer from 'components/ui/footer';
 
 export const metadata: Metadata = {
 
@@ -52,6 +53,7 @@ export default function RootLayout({
         <main className="w-full lex-auto min-w-0 flex flex-col md:px-0">
           <Navbar />
           {children}
+          <Footer />
           <Analytics />
           <SpeedInsights />
         </main>
