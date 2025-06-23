@@ -63,7 +63,7 @@ const cardVariantsTop = {
 };
 
 export default function CardsSection() {
-  const width = useWindowSize();
+  const { width } = useWindowSize();
 
   return (
     <>
