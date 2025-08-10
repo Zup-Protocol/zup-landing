@@ -7,11 +7,49 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Zup Protocol | Your Liquidity Pool Aggregator",
-  description: "Find & Deposit in the best liquidity pool in a minute.",
-
+  description: "Find and deposit in the best liquidity pools in a minute. Zup Protocol aggregates top DeFi pools for optimal yield and security.",
+  applicationName: "Zup Protocol",
+  keywords: [
+    "Zup Protocol",
+    "DeFi",
+    "Liquidity Pool",
+    "Yield Farming",
+    "Crypto",
+    "Aggregator",
+    "Blockchain",
+    "Web3",
+  ],
+  authors: [{ name: "Zup Protocol Team", url: "https://zupprotocol.xyz" }],
+  creator: "Zup Protocol",
+  themeColor: "#7357FF",
   icons: {
     icon: "/favicon.ico",
-    // apple: "/apple-touch-icon.png",
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
+  openGraph: {
+    title: "Zup Protocol | Your Liquidity Pool Aggregator",
+    description: "Find and deposit in the best liquidity pools in a minute. Zup Protocol aggregates top DeFi pools for optimal yield and security.",
+    url: "https://zupprotocol.xyz",
+    siteName: "Zup Protocol",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Zup Protocol Open Graph Image",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Zup Protocol | Your Liquidity Pool Aggregator",
+    description: "Find and deposit in the best liquidity pools in a minute. Zup Protocol aggregates top DeFi pools for optimal yield and security.",
+    site: "@zup_protocol",
+    creator: "@zup_protocol",
+    images: ["/og-image.png"],
   },
 };
 
