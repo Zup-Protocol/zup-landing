@@ -1,14 +1,13 @@
 "use client";
-import React from "react";
-import Image from "next/image";
-import Button from "components/ui/button";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
-import ethereum from "public/assets/cryptos/ethereum.svg";
-import scroll from "public/assets/cryptos/scroll.svg";
+import ethereum from "public/assets/blockchains/ethereum.svg";
+import scroll from "public/assets/blockchains/scroll.svg";
+import unichain from "public/assets/blockchains/unichain.svg";
 import globe from "public/assets/icons/globe.svg";
 
-const cryptos = [
+const blockchains = [
   {
     name: "Ethereum",
     icon: ethereum,
@@ -17,9 +16,13 @@ const cryptos = [
     name: "Scroll",
     icon: scroll,
   },
+  {
+    name: "Unichain",
+    icon: unichain,
+  },
 ];
 
-const blockChainList = [
+const dexs = [
   {
     name: "Uniswap",
     icon: "https://uniswap.org/favicon.ico",
@@ -31,6 +34,14 @@ const blockChainList = [
   {
     name: "SushiSwap",
     icon: "https://sushi.com/favicon.ico",
+  },
+  {
+    name: "Nuri Exchange",
+    icon: "https://www.nuri.exchange/favicon/favicon.ico",
+  },
+  {
+    name: "Zebra",
+    icon: "https://zebra.xyz/favicon.png",
   },
 ];
 
@@ -61,7 +72,7 @@ const logoVariants = {
     scale: 1,
     opacity: 1,
     transition: {
-      type: 'spring' as const,
+      type: "spring" as const,
       stiffness: 260,
       damping: 20,
     },
@@ -96,37 +107,53 @@ export default function BlockchainsSection() {
           <div className="w-1/3 hidden lg:block" />
 
           <div className="lg:w-1/3 flex flex-row items-center justify-evenly space-x-4">
-            {cryptos.map((crypto) => (
-              <motion.div key={crypto.name} variants={logoVariants}>
-                <Image src={crypto.icon} alt={crypto.name} height={70} width={70} />
+            {blockchains.map((blockchain) => (
+              <motion.div key={blockchain.name} variants={logoVariants}>
+                <Image
+                  src={blockchain.icon}
+                  alt={blockchain.name}
+                  height={70}
+                  width={70}
+                />
               </motion.div>
             ))}
           </div>
 
-          <motion.div className="md:w-1/3 flex items-center justify-end" variants={itemVariants}>
-            <span className="text-gray-400 text-right">More coming soon...</span>
+          <motion.div
+            className="md:w-1/3 flex items-center justify-end"
+            variants={itemVariants}
+          >
+            <span className="text-gray-400 text-right">
+              More coming soon...
+            </span>
           </motion.div>
         </div>
 
-        <div className="h-36 w-full border-b border-b-gray-200 flex justify-evenly ">
+        <div className="h-36 w-full border-b border-b-gray-200 w-screen flex justify-evenly ">
           <div className="w-1/3 hidden lg:block" />
-          <div className="lg:w-1/3 flex flex-row items-center justify-evenly space-x-4">
-            {blockChainList.map((dex) => (
-              <motion.div
-                key={dex.name}
-                className="flex flex-row items-center justify-center gap-2"
-                variants={logoVariants}
-              >
-                <img src={dex.icon} alt={`${dex.name} logo`} className="h-6 w-6" />
-                <span className="hidden sm:inline">{dex.name}</span>
-              </motion.div>
-            ))}
+          <div className="flex items-center justify-center">
+            <div className="marquee w-full overflow-hidden">
+              <div className="marquee-content">
+                {[...Array(10)].flatMap(() =>
+                  dexs.map((dex, idx) => (
+                    <span
+                      key={dex.name + idx}
+                      style={{ opacity: 0.3 }}
+                      className="inline-flex items-center gap-2 mx-8"
+                    >
+                      <img
+                        src={dex.icon}
+                        alt={`${dex.name} logo`}
+                        className="h-6 w-6"
+                      />
+                      <span>{dex.name}</span>
+                    </span>
+                  ))
+                )}
+              </div>
+            </div>
           </div>
-          <motion.div className="w-1/3 flex justify-end items-center" variants={itemVariants}>
-            <Button url={''} text={'View Full List'} variant="secondary" />
-          </motion.div>
         </div>
-
       </div>
 
       <div className="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center">

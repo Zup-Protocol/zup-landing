@@ -3,15 +3,16 @@ import { motion } from 'framer-motion';
 import { useWindowSize } from 'hooks/useWindowSize';
 
 import group from 'public/assets/icons/group.svg';
-import stars from 'public/assets/icons/stars.svg';
 import glass from 'public/assets/icons/magGlass.svg';
+import stars from 'public/assets/icons/stars.svg';
 import drop from '../../public/assets/icons/drop.svg';
 
+import Button from 'components/ui/button';
+import FeatureCard from 'components/ui/featureCard';
+import ParabolicDiv from 'components/ui/parabolic';
 import TokenSelectorSkeleton from 'components/ui/tokenSelectorSkeleton';
 import YieldPoolSkeleton from 'components/ui/yieldPoolSkeleton';
-import FeatureCard from 'components/ui/featureCard';
-import Button from 'components/ui/button';
-import ParabolicDiv from 'components/ui/parabolic';
+import { appUrl } from 'core/constants';
 
 const cardVariantsLeft = {
   offscreen: {
@@ -87,7 +88,7 @@ export default function CardsSection() {
             >
               <FeatureCard title="Choose the tokens" icon={group} alignment="left">
                 <TokenSelectorSkeleton />
-                <TokenSelectorSkeleton />
+                <TokenSelectorSkeleton isUSDC/>
               </FeatureCard>
             </motion.div>
 
@@ -105,7 +106,7 @@ export default function CardsSection() {
               >
                 <div className="h-5 w-40 bg-gray-200 rounded-md animate-pulse"></div>
                 <YieldPoolSkeleton />
-                <YieldPoolSkeleton />
+                <YieldPoolSkeleton isUniswap={false} />
               </FeatureCard>
             </motion.div>
 
@@ -118,8 +119,8 @@ export default function CardsSection() {
             >
               <FeatureCard title="Deposit." icon={drop} alignment="center">
                 <TokenSelectorSkeleton type='center' />
-                <TokenSelectorSkeleton type='center' />
-                <Button text={"Deposit"} url={''} variant={''} />
+                <TokenSelectorSkeleton type='center' isUSDC/>
+                <Button text={"Deposit"} url={appUrl} variant={''} />
               </FeatureCard>
             </motion.div>
           </div>

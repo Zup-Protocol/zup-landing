@@ -1,19 +1,26 @@
-import React from 'react';
 import Image from 'next/image';
-import Button from './button';
 import Link from 'next/link';
+import Button from './button';
 
+import { appUrl } from 'core/constants';
 import logo from 'public/assets/icons/logo.svg';
-import arrow from 'public/assets/icons/arrowDown.svg';
 
 const link = [
   {
-    name: 'About',
-    url: '',
+    name: 'FAQ',
+    url: 'https://zupprotocol.gitbook.io/documentation/general/faq',
   },
   {
-    name: 'Socials',
-    url: '',
+    name: 'Docs',
+    url: 'https://zupprotocol.gitbook.io/documentation',
+  },
+    {
+    name: 'Newsletter',
+    url: 'https://zupprotocol.substack.com/',
+  },
+      {
+    name: 'Contact us',
+    url: 'https://zupprotocol.gitbook.io/documentation/other/contact-us',
   },
 ];
 
@@ -25,20 +32,26 @@ export default function Navbar() {
           <Image src={logo} alt={""} />
           <span className="text-2xl font-bold">Zup</span>
         </div>
-        <div className='hidden md:w-[33%] justify-center md:flex items-center gap-4 text-[var(--purple)] font-semibold '>
-          {link.map((item, index) => (
-            <Link
-              key={index}
-              href={item.url}
-              className="flex items-center gap-1 justify-center hover:text-[var(--purple-dark)] transition-colors duration-200"
-            >
-              {item.name}
-              <Image src={arrow} alt='' />
-            </Link>
-          ))}
+        <div className='hidden md:w-[53%] justify-center md:flex items-center gap-10 text-[var(--purple)] font-medium '>
+  {link.map((item, index) => (
+    <Link
+      key={index}
+      href={item.url}
+      passHref
+      legacyBehavior
+    >
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center gap-1 justify-center hover:text-[var(--purple-dark)] hover:font-semibold transition-colors duration-200"
+      >
+        {item.name}
+      </a>
+    </Link>
+  ))}
         </div>
         <div className='md:w-[33%] flex items-center justify-end'>
-          <Button variant={'primary'} text="Launch App" url="" />
+          <Button variant={'primary'} text="Launch App" url={appUrl} />
         </div>
       </div>
     </nav>

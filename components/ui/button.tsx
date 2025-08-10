@@ -1,5 +1,5 @@
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 import btnIcon from "public/assets/icons/btnIcon.svg";
 
 // Objeto para armazenar as variantes do botão
@@ -7,14 +7,14 @@ import btnIcon from "public/assets/icons/btnIcon.svg";
 const buttonVariants = {
   primary: {
     style: "bg-[var(--purple-dark)] text-white rounded-xl hover:bg-[var(--purple)]",
-    iconClass: "", // O ícone não é invertido por padrão
+    iconClass: "invert brightness-0", // Ícone branco para o botão primário
   },
-  secondary: {
-    style: "text-[var(--purple)] rounded-xl hover:bg-[var(--purple)] hover:text-white",
-    iconClass: "invert", // O ícone é invertido na variante secundária
-  },
+secondary: {
+  style: "text-[var(--purple)] rounded-xl hover:bg-[var(--purple)] hover:text-white",
+  iconClass: "brightness-100 group-hover:invert group-hover:brightness-0", 
+},
   tertiary: {
-    style: "bg-[var(--purple-dark)] text-white rounded-xl hover:bg-[var(--purple)]", // O ícone é invertido na variante terciária
+    style: "bg-[var(--purple-dark)] text-white rounded-xl hover:bg-[var(--purple)]",
   },
 };
 
@@ -32,9 +32,12 @@ export default function Button({ url, text, variant = "primary" }) {
         <Image
           src={btnIcon}
           alt=""
-          // A classe 'invert' é aplicada dinamicamente com base na variante
-          // A classe 'group-hover:invert-0' garante que o ícone fique branco no hover
-          className={`group-hover:invert-0 ${selectedVariant.iconClass}`}
+          // A classe é aplicada dinamicamente com base na variante
+          // Para o secundário, o ícone vira branco no hover
+          className={`${selectedVariant.iconClass}`}
+          // className={`${
+          //   selectedVariant.iconClass === "invert brightness-0" ? "invert brightness-0" : "brightness-100"
+          // } ${selectedVariant.iconClass === "brightness-100" ? "group-hover:invert brightness-0" : ""}`}
         />
       </Link>
     </button>

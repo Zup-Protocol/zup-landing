@@ -1,6 +1,6 @@
 // components/ui/featureCard.js
-import Image from 'next/image';
 import clsx from 'clsx'; //legibilidade
+import Image from 'next/image';
 
 type FeatureCardProps = {
   title: string;
@@ -25,15 +25,18 @@ export default function FeatureCard({
     }
   );
 
+
   const cardClasses = clsx(
-    'bg-white flex flex-col items-start justify-between text-left lg:rounded-lg',
-    'w-full sm:w-2/3 md:max-w-full md:w-1/2 p-4 gap-4',
+    'bg-white flex flex-col items-start justify-between text-left lg:rounded-2xl',
+    'w-full sm:w-2/3 md:max-w-full md:w-1/2 p-8 gap-4', // changed p-4 to p-8
     {
-      'rounded-r-lg': alignment === 'left',
-      'rounded-l-lg': alignment === 'right',
-      'rounded-lg mx-auto py-10': alignment === 'center',
+      'rounded-r-2xl': alignment === 'left',
+      'rounded-l-2xl': alignment === 'right',
+      'rounded-2xl mx-auto py-10': alignment === 'center',
     }
   );
+
+
 
   return (
     <div className={containerClasses}>

@@ -1,22 +1,31 @@
-'use client';
-import React from 'react';
-import { motion } from 'framer-motion';
-import { FaGithub, FaDiscord } from 'react-icons/fa';
-import { FaXTwitter } from 'react-icons/fa6';
+"use client";
+import {
+  contactUsUrl,
+  docsUrl,
+  faqUrl,
+  githubUrl,
+  privacyPolicyUrl,
+  telegramUrl,
+  termsOfUseUrl,
+  xUrl,
+} from "core/constants";
+import { motion } from "framer-motion";
+import { FaGithub, FaTelegram } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 
 const Footer = () => {
   const navLinks = [
-    { name: 'Privacy Policy', href: '#' },
-    { name: 'Terms of use', href: '#' },
-    { name: 'FAQ', href: '#' },
-    { name: 'Docs', href: '#' },
-    { name: 'Contact us', href: '#' },
+    { name: "Privacy Policy", href: privacyPolicyUrl },
+    { name: "Terms of use", href: termsOfUseUrl },
+    { name: "FAQ", href: faqUrl },
+    { name: "Docs", href: docsUrl },
+    { name: "Contact us", href: contactUsUrl },
   ];
 
   const socialLinks = [
-    { icon: <FaXTwitter />, href: '#', name: 'Twitter' },
-    { icon: <FaDiscord />, href: '#', name: 'Discord' },
-    { icon: <FaGithub />, href: '#', name: 'GitHub' },
+    { icon: <FaXTwitter />, href: xUrl, name: "Twitter" },
+    { icon: <FaTelegram />, href: telegramUrl, name: "Discord" },
+    { icon: <FaGithub />, href: githubUrl, name: "GitHub" },
   ];
 
   const footerVariants = {
@@ -26,7 +35,7 @@ const Footer = () => {
       y: 0,
       transition: {
         duration: 0.6,
-        ease: 'easeInOut',
+        ease: "easeInOut",
       },
     },
   } as const;
@@ -37,7 +46,6 @@ const Footer = () => {
   };
 
   return (
-
     <div className="flex items-center justify-center border-t border-gray-200 py-2">
       <motion.footer
         className="w-full max-w-7xl py-4 rounded-lg"
@@ -51,6 +59,8 @@ const Footer = () => {
               <motion.a
                 key={link.name}
                 href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-sm text-gray-500 hover:text-gray-900 transition-colors"
                 variants={itemVariants}
                 whileHover="hover"
@@ -66,6 +76,8 @@ const Footer = () => {
                 key={social.name}
                 href={social.href}
                 aria-label={social.name}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-gray-500 hover:text-gray-900 transition-colors text-xl"
                 variants={itemVariants}
                 whileHover="hover"

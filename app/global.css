@@ -1,17 +1,17 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 ::selection {
-  background-color: #BEB1FF;
-  color: #0F0F10;
+  background-color: #beb1ff;
+  color: #0f0f10;
 }
 
 :root {
-  --purple-dark: #7357FF;
-  --purple: #8979F2;
-  --purple-light: #BEB1FF;
-  --white: #F1EEFF;
-  --gray: #E6E4F2;
-  --black: #0F0F10;
+  --purple-dark: #7357ff;
+  --purple: #8979f2;
+  --purple-light: #beb1ff;
+  --white: #f1eeff;
+  --gray: #e6e4f2;
+  --black: #0f0f10;
 }
 /*
 @media (prefers-color-scheme: dark) {
@@ -28,7 +28,8 @@
   }
 }
 */
-html, body {
+html,
+body {
   height: 100%;
   width: 100%;
 }
@@ -43,8 +44,8 @@ pre {
 }
 
 /* Remove Safari input shadow on mobile */
-input[type='text'],
-input[type='email'] {
+input[type="text"],
+input[type="email"] {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -61,17 +62,39 @@ table {
   text-wrap: balance;
 }
 
-
 @font-face {
-  font-family: 'SN Pro';
-  src: url('../public/assets/fonts/SNPro/SNPro-Book.woff2') format('woff2'),
-       url('/fonts/SNPro.woff') format('woff');
+  font-family: "SN Pro";
+  src: url("../public/assets/fonts/SNPro/SNPro-Book.woff2") format("woff2"),
+    url("/fonts/SNPro.woff") format("woff");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
-/* opcionalmente, defina a fonte padrão do body */
 body {
-  font-family: 'SN Pro', sans-serif;
+  font-family: "SN Pro", sans-serif;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.marquee {
+  width: 100vw; /* full viewport width */
+  overflow: hidden; /* hide overflowing content */
+  position: relative;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+}
+
+.marquee-content {
+  display: inline-flex; /* use inline-flex for horizontal alignment */
+  white-space: nowrap; /* prevent wrapping */
+  animation: marquee 100s linear infinite; /* smooth infinite animation */
 }

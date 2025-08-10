@@ -1,29 +1,21 @@
-'use client';
-import Image from 'next/image';
-import React from 'react';
-import { motion } from 'framer-motion';
+"use client";
+import { motion } from "framer-motion";
+import Image from "next/image";
 
-import bootCampLogo from 'public/assets/partners/bootCamp.svg';
-import speezardLogo from 'public/assets/partners/speed.svg';
-import scrollLogo from 'public/assets/partners/scroll.svg';
+import bootCampLogo from "public/assets/partners/bootCamp.svg";
+import speezardLogo from "public/assets/partners/speed.svg";
 
 const partners = [
   {
-    name: 'Startupbootcamp',
+    name: "Startupbootcamp",
     logo: bootCampLogo,
     width: 160,
     height: 40,
   },
   {
-    name: 'Speezard',
+    name: "Speezard",
     logo: speezardLogo,
     width: 140,
-    height: 40,
-  },
-  {
-    name: 'Scroll',
-    logo: scrollLogo,
-    width: 100,
     height: 40,
   },
 ];
@@ -35,7 +27,7 @@ const sectionVariants = {
     y: 0,
     transition: {
       duration: 0.5,
-      when: 'beforeChildren',
+      when: "beforeChildren",
       staggerChildren: 0.2,
     },
   },
@@ -67,7 +59,7 @@ export default function PartnersSection() {
             variants={itemVariants}
             className="text-2xl font-light text-gray-400"
           >
-            Partners & stakeholders
+            Backed by
           </motion.h2>
 
           <div className="flex w-full flex-wrap items-center justify-around gap-x-12 gap-y-6 md:justify-center md:gap-x-16">
@@ -79,7 +71,7 @@ export default function PartnersSection() {
               >
                 <Image
                   src={partner.logo}
-                  alt={`Logo da ${partner.name}`}
+                  alt={`Logo of ${partner.name}`}
                   width={partner.width}
                   height={partner.height}
                   className="h-auto w-auto object-contain"
