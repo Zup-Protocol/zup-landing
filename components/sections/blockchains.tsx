@@ -103,10 +103,7 @@ export default function BlockchainsSection() {
         </motion.div>
 
         <div className="h-36 w-full border-b border-b-gray-200 flex justify-evenly ">
-          {/* Esquerda (vazia) */}
-          <div className="w-1/3 hidden lg:block" />
-
-          <div className="lg:w-1/3 flex flex-row items-center justify-evenly space-x-4">
+          <div className="flex flex-row items-center justify-evenly space-x-10">
             {blockchains.map((blockchain) => (
               <motion.div key={blockchain.name} variants={logoVariants}>
                 <Image
@@ -119,14 +116,7 @@ export default function BlockchainsSection() {
             ))}
           </div>
 
-          <motion.div
-            className="md:w-1/3 flex items-center justify-end"
-            variants={itemVariants}
-          >
-            <span className="text-gray-400 text-right">
-              More coming soon...
-            </span>
-          </motion.div>
+          {/* Removed the "More coming soon..." column */}
         </div>
 
         <div className="h-36 w-full border-b border-b-gray-200 w-screen flex justify-evenly ">
