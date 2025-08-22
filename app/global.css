@@ -96,5 +96,5 @@ body {
 .marquee-content {
   display: inline-flex; /* use inline-flex for horizontal alignment */
   white-space: nowrap; /* prevent wrapping */
-  animation: marquee 100s linear infinite; /* smooth infinite animation */
+  animation: marquee 500s linear infinite; /* smooth infinite animation */
 }
