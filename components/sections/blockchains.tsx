@@ -148,22 +148,22 @@ export default function BlockchainsSection() {
           <p className="text-2xl text-gray-500">and DEXs</p>
         </motion.div>
 
-        <div className="h-36 w-full flex justify-evenly">
-          <div className="flex flex-row flex-wrap items-center justify-center gap-10 p-10">
+        <div className="w-full flex justify-center">
+          <div className="flex flex-row flex-wrap items-center justify-center gap-6 sm:gap-10 px-4 sm:px-10 py-4">
             {blockchains.map((blockchain) => (
               <motion.div key={blockchain.name} variants={logoVariants}>
                 <Image
                   src={blockchain.icon}
                   alt={blockchain.name}
-                  height={85}
-                  width={85}
+                  height={70}
+                  width={70}
                 />
               </motion.div>
             ))}
           </div>
         </div>
 
-        <div className="h-10 w-full w-screen flex justify-evenly ">
+        <div className="h-20 w-full w-screen flex justify-evenly ">
           <div className="w-1/3 hidden lg:block" />
           <div className="flex items-center justify-center">
             <div className="marquee w-full overflow-hidden">
