@@ -21,10 +21,10 @@ const featuresData = [
     icon: <DatabaseZap className="w-8 h-8 text-brand-purple" strokeWidth={1} />,
     title: "Reliable data",
     description:
-      "Powered by subgraphs, our data is pulled directly from the Blockchain, making it a way less error-prone and real-timed. Making sure you always receive the latest data.",
-    linkText: "View Subgraphs",
+      "Powered by blockchain indexers, our data is pulled directly from the Blockchain, making it a way less error-prone and real-timed. Making sure you always receive the latest data.",
+    linkText: "View Indexers",
     linkHref:
-      "https://zupprotocol.gitbook.io/documentation/technical/zup-protocol-subgraphs",
+      "https://zupprotocol.gitbook.io/documentation/technical/zup-protocol-indexer",
     class: "col-span-2 row-span-4",
   },
   {
