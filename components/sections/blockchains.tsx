@@ -5,6 +5,7 @@ import Image from "next/image";
 import base from "public/assets/blockchains/base.svg";
 import ethereum from "public/assets/blockchains/ethereum.svg";
 import hyperliquid from "public/assets/blockchains/hyperliquid.svg";
+import plasma from "public/assets/blockchains/plasma.svg";
 import scroll from "public/assets/blockchains/scroll.svg";
 import unichain from "public/assets/blockchains/unichain.svg";
 import globe from "public/assets/icons/globe.svg";
@@ -29,6 +30,10 @@ const blockchains = [
   {
     name: "Hyperliquid",
     icon: hyperliquid,
+  },
+  {
+    name: "Plasma",
+    icon: plasma,
   },
 ];
 
